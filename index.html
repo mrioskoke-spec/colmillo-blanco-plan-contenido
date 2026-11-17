@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colmillo Blanco — Segunda quincena de noviembre 2026</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    :root {
+      --gold:         #C9A84C;
+      --gold-mid:     #E0BF6A;
+      --navy:         #1A2B4A;
+      --white:        #FFFFFF;
+      --cream:        #FAF8F3;
+      --off-white:    #F4F2ED;
+      --gray:         #8A8A8A;
+      --gray-line:    #E0DDD6;
+      --text:         #1C1C1C;
+      --text-soft:    #5C5C5C;
+
+      --c-post:       #2F9E44;
+      --c-reel:       #3B5BDB;
+      --c-carrusel:   #7048E8;
+
+      --gold-pale:    rgba(201,168,76,0.10);
+      --gold-border:  rgba(201,168,76,0.28);
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .sp { margin-top: 14px; }
+
+    .header {
+      background: var(--navy);
+      position: relative;
+    }
+    .header-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 75% 40%, rgba(201,168,76,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .header-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 200px;
+    }
+
+    .header-nameplate {
+      background: var(--cream);
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      border-right: 3px solid var(--gold);
+    }
+    .nameplate-logo-fallback {
+      font-family: 'Georgia', serif;
+      font-size: 22px;
+      font-weight: normal;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+    }
+    .nameplate-foot {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .header-meta {
+      padding: 40px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+    }
+    .header-eyebrow {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.65);
+    }
+    .header-period {
+      font-family: 'Georgia', serif;
+      font-size: 36px;
+      font-weight: normal;
+      color: var(--white);
+      line-height: 1.15;
+    }
+    .header-stats {
+      display: flex;
+      gap: 32px;
+    }
+    .hstat-num {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold-mid);
+      line-height: 1;
+    }
+    .hstat-label {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 4px;
+    }
+    .header-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold) 0%, rgba(201,168,76,0.12) 100%);
+    }
+
+    .estrategia {
+      background: var(--navy);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 64px;
+    }
+    .estr-hero {
+      padding: 52px 56px 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: relative;
+    }
+    .estr-hero::before {
+      content: '\201C';
+      position: absolute;
+      top: 0;
+      right: 44px;
+      font-family: 'Georgia', serif;
+      font-size: 180px;
+      color: rgba(201,168,76,0.055);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .estr-tag {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .estr-quote {
+      font-family: 'Georgia', serif;
+      font-size: 27px;
+      font-weight: normal;
+      color: var(--white);
+      line-height: 1.38;
+      max-width: 620px;
+      margin-bottom: 16px;
+    }
+    .estr-quote em {
+      color: var(--gold-mid);
+      font-style: italic;
+    }
+    .estr-desc {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.48);
+      max-width: 560px;
+      line-height: 1.85;
+    }
+    .estr-objs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .eobj {
+      padding: 32px 36px;
+      border-right: 1px solid rgba(255,255,255,0.055);
+    }
+    .eobj:last-child { border-right: none; }
+    .eobj-num {
+      font-family: 'Georgia', serif;
+      font-size: 52px;
+      color: rgba(201,168,76,0.13);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .eobj-title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .eobj-text {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+    }
+
+    .week-sep {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .week-sep::before,
+    .week-sep::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-line);
+    }
+    .week-sep span {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .ph-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .ph-time {
+      padding: 18px 24px 18px 0;
+      display: flex;
+      align-items: center;
+    }
+    .ph-time span {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      color: var(--gray);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .ph-info h3 {
+      font-family: 'Georgia', serif;
+      font-size: 15.5px;
+      font-weight: normal;
+      font-style: italic;
+      color: var(--navy);
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 40px 60px 100px;
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 0 0 28px;
+    }
+    .sec-head.first { margin-top: 0; }
+    .sec-num {
+      font-family: 'Georgia', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .sec-label {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .sec-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--gray-line);
+    }
+
+    .calendario {
+      background: var(--white);
+      border-radius: 14px;
+      border: 1px solid var(--gray-line);
+      overflow: hidden;
+      margin-bottom: 64px;
+    }
+    .cal-head {
+      display: grid;
+      grid-template-columns: 56px minmax(150px, 1fr) 85px 142px 75px;
+      background: var(--navy);
+      padding: 11px 28px;
+      gap: 16px;
+    }
+    .cal-head span {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.55);
+    }
+    .cal-week {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 9px 28px;
+      background: rgba(26,43,74,0.03);
+      border-bottom: 1px solid var(--gray-line);
+    }
+    .cal-week .wk {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .cal-week::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201,168,76,0.18);
+    }
+    .cal-row {
+      display: grid;
+      grid-template-columns: 56px minmax(150px, 1fr) 85px 142px 75px;
+      padding: 13px 28px;
+      gap: 16px;
+      border-bottom: 1px solid var(--gray-line);
+      align-items: center;
+      transition: background 0.1s;
+    }
+    .cal-row:last-child { border-bottom: none; }
+    .cal-row:hover { background: rgba(26,43,74,0.02); }
+    .cal-date .dn { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; color: var(--navy); line-height: 1; }
+    .cal-date .dd { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 10px; color: var(--gray); margin-top: 2px; }
+    .cal-tema { font-family: 'Georgia', serif; font-size: 13px; font-style: italic; color: var(--text); }
+    .cal-horario { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 11px; color: var(--gray); text-align: right; }
+
+    .b-pilar { background: var(--off-white); color: var(--gray); border: 1px solid var(--gray-line); }
+
+    .piezas { display: flex; flex-direction: column; gap: 22px; margin-bottom: 64px; }
+
+    .pieza {
+      background: var(--white);
+      border-radius: 14px;
+      border: 1px solid var(--gray-line);
+      overflow: hidden;
+    }
+
+    .pieza-head {
+      display: grid;
+      grid-template-columns: 76px 4px 1fr auto;
+      align-items: stretch;
+      border-bottom: 1px solid var(--gray-line);
+    }
+    .ph-date {
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 10px;
+      gap: 2px;
+    }
+    .ph-date .num { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 700; color: var(--white); line-height: 1; }
+    .ph-date .mes { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 8px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.32); }
+    .ph-accent { width: 4px; }
+    .ac-post     { background: var(--c-post); }
+    .ac-reel     { background: var(--c-reel); }
+    .ac-carrusel { background: var(--c-carrusel); }
+    .ph-info {
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex; align-items: center;
+      padding: 3px 9px; border-radius: 20px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9px; font-weight: 700; letter-spacing: 0.2px;
+      text-transform: uppercase; white-space: nowrap;
+    }
+    .b-post     { background: #EBFBEE; color: var(--c-post); }
+    .b-reel     { background: #EDF2FF; color: var(--c-reel); }
+    .b-carrusel { background: #F3F0FF; color: var(--c-carrusel); }
+
+    .pieza-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .pcol {
+      padding: 28px 32px;
+    }
+    .pcol:first-child { border-right: 1px solid var(--gray-line); }
+
+    .pcol-label {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .pcol-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-line);
+    }
+
+    .sub {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin: 14px 0 8px;
+    }
+    .sub:first-child { margin-top: 0; }
+
+    .copy-block {
+      background: var(--off-white);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12.5px;
+      line-height: 1.85;
+      color: var(--text);
+      white-space: pre-line;
+    }
+    .cv { border-left: 3px solid var(--gold); }
+    .cc { border-left: 3px solid var(--navy); }
+    .cs { border-left: 3px solid var(--c-carrusel); font-size: 11.5px; color: var(--text-soft); }
+
+    .resumen-nums {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .rn-card {
+      background: var(--white);
+      border: 1px solid var(--gray-line);
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .rn-card.gold {
+      border-color: var(--gold-border);
+      background: var(--gold-pale);
+    }
+    .rn-card .rnum {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .rn-card.gold .rnum { color: #7A5800; }
+    .rn-card .rlabel {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-top: 8px;
+    }
+    .resumen-detail {
+      background: var(--white);
+      border: 1px solid var(--gray-line);
+      border-radius: 12px;
+      padding: 36px;
+      margin-top: 12px;
+    }
+    .rd-label {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .pilares { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ptag {
+      background: var(--off-white);
+      border: 1px solid var(--gray-line);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .footer {
+      background: var(--navy);
+      border-top: 3px solid var(--gold);
+      padding: 30px 60px;
+      margin-top: 40px;
+    }
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-logo-text {
+      font-family: 'Georgia', serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-slogan {
+      font-family: 'Georgia', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(255,255,255,0.28);
+      text-align: center;
+    }
+    .footer-meta {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── IMAGEN INDIVIDUAL 4:5 (posts) ───────── */
+    .post-img-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      border-radius: 6px;
+      display: block;
+    }
+    .post-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* ── REEL CON VIDEO REAL 9:16 ────────────── */
+    .reel-video-wrap {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border-radius: 6px;
+      display: block;
+      background: #000;
+    }
+    .reel-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── CARRUSEL HORIZONTAL ─────────────────── */
+    .car-wrap { width: 100%; }
+    .car-track {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 0;
+      border-radius: 6px;
+      cursor: grab;
+    }
+    .car-track:active { cursor: grabbing; }
+    .car-track::-webkit-scrollbar { display: none; }
+    .car-slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+    .car-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      pointer-events: none;
+    }
+    .car-indicators {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 0 2px;
+    }
+    .car-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gray-line);
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .car-dot:first-child {
+      background: var(--gold);
+      width: 18px;
+      border-radius: 3px;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       RESPONSIVE — pantallas angostas (celular, ~700px y menos)
+       ══════════════════════════════════════════════════════ */
+    @media (max-width: 760px) {
+      .header-inner { grid-template-columns: 1fr; min-height: 0; }
+      .header-nameplate { border-right: none; border-bottom: 3px solid var(--gold); }
+      .header-period { font-size: 26px; }
+      .header-stats { flex-wrap: wrap; gap: 20px; }
+
+      .estr-hero { padding: 32px 22px 28px; }
+      .estr-quote { font-size: 20px; max-width: 100%; }
+      .estr-desc { max-width: 100%; }
+      .estr-objs { grid-template-columns: 1fr; }
+      .eobj { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.055); }
+      .eobj:last-child { border-bottom: none; }
+
+      /* Calendario: la fila se vuelve una tarjeta apilada */
+      .cal-head { display: none; }
+      .cal-row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 14px 18px;
+      }
+      .cal-row > div { width: 100%; }
+      .cal-tema { font-size: 14px; }
+      .cal-horario { text-align: left; }
+
+      /* Pieza: header y body se apilan */
+      .pieza-head { grid-template-columns: 56px 4px 1fr; }
+      .ph-time { display: none; } /* el horario ya está en el calendario de arriba */
+      .pieza-body { grid-template-columns: 1fr !important; }
+
+      .resumen-nums { flex-wrap: wrap; }
+      .pilares { flex-wrap: wrap; }
+    }
+
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-glow"></div>
+  <div class="header-inner">
+    <div class="header-nameplate">
+      <span class="nameplate-logo-fallback">Colmillo Blanco</span>
+      <span class="nameplate-foot">Plan de contenido</span>
+    </div>
+    <div class="header-meta">
+      <div class="header-eyebrow">Agencia ERRE — Instagram</div>
+      <div class="header-period">Segunda quincena<br>de noviembre 2026</div>
+      <div class="header-stats">
+        <div>
+          <div class="hstat-num">8</div>
+          <div class="hstat-label">Piezas</div>
+        </div>
+        <div>
+          <div class="hstat-num">2</div>
+          <div class="hstat-label">Semanas</div>
+        </div>
+        <div>
+          <div class="hstat-num">4</div>
+          <div class="hstat-label">Posts</div>
+        </div>
+        <div>
+          <div class="hstat-num">2</div>
+          <div class="hstat-label">Reels</div>
+        </div>
+        <div>
+          <div class="hstat-num">2</div>
+          <div class="hstat-label">Carruseles</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="header-bar"></div>
+
+<div class="container">
+
+  <div class="sec-head first">
+    <span class="sec-num">01</span>
+    <span class="sec-label">Concepto estratégico</span>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="estrategia">
+    <div class="estr-hero">
+      <div class="estr-tag">Concepto quincena · 17 – 29 nov 2026</div>
+      <div class="estr-quote">Los 4 pilares parejos, <em>2 piezas cada uno,</em> con la mezcla de marca e informativa ya fijada por el cliente.</div>
+      <div class="estr-desc">Quincena construida en conversación directa con el cliente. Los 4 pilares quedan exactamente 2 y 2: Educación canina (quiz y almohadillas), Tenencia responsable (hidatidosis y chip/esterilización), Distribución (reel de tiendas y petshops) y Nutrición y producto (mito del pasto y el reel de Kike con el plato). Se cumple la mezcla de 3 piezas de marca (tiendas, petshops, Kike) más 2 informativas con fuente como mínimo (hidatidosis, chip y esterilización), y el resto de las piezas libres también trae dato verificable (mito del pasto, almohadillas). Sin temas de obesidad ni sobrepeso, ya descartados para esta cuenta.</div>
+    </div>
+    <div class="estr-objs">
+      <div class="eobj">
+        <div class="eobj-num">1</div>
+        <div class="eobj-title">Pilares parejos, 2 y 2</div>
+        <div class="eobj-text">Educación canina (quiz "¿qué perro vive en tu casa?" y cuidado de almohadillas), Tenencia responsable (hidatidosis y chip/esterilización), Distribución (reel de tiendas y petshops) y Nutrición y producto (mito del pasto y el reel de Kike con el plato) — ninguno repite ni falta esta quincena.</div>
+      </div>
+      <div class="eobj">
+        <div class="eobj-num">2</div>
+        <div class="eobj-title">Mezcla de marca e informativa cumplida</div>
+        <div class="eobj-text">3 piezas de marca (reel de tiendas, petshops, reel de Kike) y 2 informativas con fuente verificable como mínimo (hidatidosis, chip y esterilización), dentro de la regla fija de la cuenta. Las piezas libres restantes también traen dato real (mito del pasto, almohadillas).</div>
+      </div>
+      <div class="eobj">
+        <div class="eobj-num">3</div>
+        <div class="eobj-title">Ajustes pedidos por el cliente</div>
+        <div class="eobj-text">Se sacó la pieza de escala de heces (gustó más la de pavimento y calor, ya usada en otra quincena) y se bajó el énfasis "demasiado campo" del ángulo de hidatidosis. El reel de puntos de venta se mantuvo tal como estaba planteado.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <span class="sec-label">Calendario de publicación</span>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="calendario">
+    <div class="cal-head">
+      <span>Fecha</span>
+      <span>Tema</span>
+      <span>Formato</span>
+      <span>Pilar</span>
+      <span style="text-align:right">Horario</span>
+    </div>
+
+    <!-- Semana 1 -->
+    <div class="cal-week"><span class="wk">Semana 1 · 16 al 22 de nov · 2 posts + 1 reel + 1 carrusel</span></div>
+
+    <div class="cal-row">
+      <div class="cal-date"><div class="dn">17</div><div class="dd">mar nov</div></div>
+      <div class="cal-tema">Quiz: ¿qué perro vive en tu casa?</div>
+      <div><span class="badge b-post">Post</span></div>
+      <div><span class="badge b-pilar">Educación canina</span></div>
+      <div class="cal-horario">13:00 – 21:00</div>
+    </div>
+
+    <div class="cal-row">
+      <div class="cal-date"><div class="dn">18</div><div class="dd">mié nov</div></div>
+      <div class="cal-tema">Colmillo Blanco llega a todas partes: ya llegamos a estas tiendas.</div>
+      <div><span class="badge b-reel">Reel</span></div>
+      <div><span class="badge b-pilar">Distribución</span></div>
+      <div class="cal-horario">18:00 – 21:00</div>
+    </div>
+
+    <div class="cal-row">
+      <div class="cal-date"><div class="dn">20</div><div class="dd">vie nov</div></div>
+      <div class="cal-tema">Hidatidosis: desparasitar a tu perro de campo también protege a tu familia.</div>
+      <div><span class="badge b-carrusel">Carrusel</span></div>
+      <div><span class="badge b-pilar">Tenencia responsable</span></div>
+      <div class="cal-horario">13:00 – 18:30</div>
+    </div>
+
+    <div class="cal-row">
+      <div class="cal-date"><div class="dn">22</div><div class="dd">dom nov</div></div>
+      <div class="cal-tema">Mito o realidad: si tu perro come pasto, es porque está enfermo.</div>
+      <div><span class="badge b-post">Post</span></div>
+      <div><span class="badge b-pilar">Nutrición y producto</span></div>
+      <div class="cal-horario">13:00 – 21:00</div>
+    </div>
+
+    <!-- Semana 2 -->
+    <div class="cal-week"><span class="wk">Semana 2 · 23 al 29 de nov · 2 posts + 1 reel + 1 carrusel</span></div>
+
+    <div class="cal-row">
+      <div class="cal-date"><div class="dn">23</div><div class="dd">lun nov</div></div>
+      <div class="cal-tema">Petshops: súmate a Colmillo Blanco.</div>
+      <div><span class="badge b-post">Post</span></div>
+      <div><span class="badge b-pilar">Distribución</span></div>
+      <div class="cal-horario">13:00 – 21:00</div>
+    </div>
+
+    <div class="cal-row">
+      <div class="cal-date"><div class="dn">25</div><div class="dd">mié nov</div></div>
+      <div class="cal-tema">Kike: esto es lo que sale de cada plato de Colmillo Blanco.</div>
+      <div><span class="badge b-reel">Reel</span></div>
+      <div><span class="badge b-pilar">Nutrición y producto</span></div>
+      <div class="cal-horario">18:00 – 21:00</div>
+    </div>
+
+    <div class="cal-row">
+      <div class="cal-date"><div class="dn">27</div><div class="dd">vie nov</div></div>
+      <div class="cal-tema">Chip y esterilización: pregunta en tu municipio, pueden ser gratis.</div>
+      <div><span class="badge b-carrusel">Carrusel</span></div>
+      <div><span class="badge b-pilar">Tenencia responsable</span></div>
+      <div class="cal-horario">13:00 – 18:30</div>
+    </div>
+
+    <div class="cal-row">
+      <div class="cal-date"><div class="dn">29</div><div class="dd">dom nov</div></div>
+      <div class="cal-tema">Patas: lo que hacen las almohadillas de tu perro y cómo cuidarlas.</div>
+      <div><span class="badge b-post">Post</span></div>
+      <div><span class="badge b-pilar">Educación canina</span></div>
+      <div class="cal-horario">13:00 – 21:00</div>
+    </div>
+
+  </div>
+
+  <div class="sec-head">
+    <span class="sec-num">03</span>
+    <span class="sec-label">Copies por pieza</span>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="piezas">
+
+    <!-- 17/11 -->
+    <div class="pieza">
+      <div class="pieza-head">
+        <div class="ph-date"><span class="num">17</span><span class="mes">Nov</span></div>
+        <div class="ph-accent ac-post"></div>
+        <div class="ph-info">
+          <h3>Quiz: ¿qué perro vive en tu casa?</h3>
+          <div class="ph-badges">
+            <span class="badge b-post">Post</span>
+            <span class="badge b-pilar">Educación canina</span>
+            <span class="badge b-pilar">Martes</span>
+          </div>
+        </div>
+        <div class="ph-time"><span>13:00 – 21:00</span></div>
+      </div>
+      <div class="pieza-body">
+        <div class="pcol">
+          <div class="pcol-label">Visual</div>
+          <div class="post-img-wrap"><img src="assets/img/24.png" alt="17 de noviembre" loading="lazy"></div>
+        </div>
+        <div class="pcol">
+          <div class="pcol-label">Caption</div>
+          <div class="copy-block cc">Quiz: ¿qué perro vive en tu casa? 🐶
+
+A) El guardián: le ladra a todo lo que se mueve, incluido el viento.
+B) El pastor: junta a toda la familia en el mismo rincón de la casa.
+C) El explorador: sale del paseo limpio y vuelve cubierto de barro.
+D) El dormilón: pasa el día echado al sol y solo se levanta cuando suena la bolsa de comida.
+
+Responde con tu letra en los comentarios y etiqueta a quien tenga un perro igualito.
+
+Cuéntanos: ¿cuál es el tuyo?
+
+#ColmilloBlanco #DéjalosATodosContentos #PerrosDeChile #QuizCanino</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18/11 -->
+    <div class="pieza">
+      <div class="pieza-head">
+        <div class="ph-date"><span class="num">18</span><span class="mes">Nov</span></div>
+        <div class="ph-accent ac-reel"></div>
+        <div class="ph-info">
+          <h3>Colmillo Blanco llega a todas partes: ya llegamos a estas tiendas.</h3>
+          <div class="ph-badges">
+            <span class="badge b-reel">Reel</span>
+            <span class="badge b-pilar">Distribución</span>
+            <span class="badge b-pilar">Miércoles</span>
+          </div>
+        </div>
+        <div class="ph-time"><span>18:00 – 21:00</span></div>
+      </div>
+      <div class="pieza-body">
+        <div class="pcol">
+          <div class="pcol-label">Reel</div>
+          <div class="reel-video-wrap"><video src="assets/video/puntos_venta.mp4" poster="assets/img/poster_puntos_venta.jpg" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+        </div>
+        <div class="pcol">
+          <div class="pcol-label">Caption</div>
+          <div class="copy-block cc">Colmillo Blanco llega a todas partes.
+
+De norte a sur, ya llegamos a estas tiendas. Pregunta por Colmillo Blanco en tu petshop de siempre, y si aún no lo tienen, revisa en nuestra web cuál es la tienda más cercana a ti.
+
+Para todos los perros, Colmillo Blanco.
+
+Encuentra tu tienda en 👉 www.colmilloblanco.cl
+
+#ColmilloBlanco #DéjalosATodosContentos #PerrosDeChile</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20/11 -->
+    <div class="pieza">
+      <div class="pieza-head">
+        <div class="ph-date"><span class="num">20</span><span class="mes">Nov</span></div>
+        <div class="ph-accent ac-carrusel"></div>
+        <div class="ph-info">
+          <h3>Hidatidosis: desparasitar a tu perro de campo también protege a tu familia.</h3>
+          <div class="ph-badges">
+            <span class="badge b-carrusel">Carrusel</span>
+            <span class="badge b-pilar">Tenencia responsable</span>
+            <span class="badge b-pilar">Viernes</span>
+          </div>
+        </div>
+        <div class="ph-time"><span>13:00 – 18:30</span></div>
+      </div>
+      <div class="pieza-body">
+        <div class="pcol">
+          <div class="pcol-label">Carrusel — 3 slides</div>
+          <div class="car-wrap"><div class="car-track">
+    <div class="car-slide"><img src="assets/img/25.png" alt="Slide 1" loading="lazy"></div>
+    <div class="car-slide"><img src="assets/img/26.png" alt="Slide 2" loading="lazy"></div>
+    <div class="car-slide"><img src="assets/img/27.png" alt="Slide 3" loading="lazy"></div>
+  </div><div class="car-indicators"><span class="car-dot"></span><span class="car-dot"></span><span class="car-dot"></span></div></div>
+        </div>
+        <div class="pcol">
+          <div class="pcol-label">Caption</div>
+          <div class="copy-block cc">Hidatidosis: desparasitar a tu perro de campo también protege a tu familia. 🐾
+
+La hidatidosis es una enfermedad parasitaria que pasa de los perros a las personas. En el campo, el contagio suele darse cuando el perro come vísceras crudas de animales faenados, como las de ovejas.
+
+Lo que recomienda el Ministerio de Salud: desparasitar a los perros periódicamente y no darles vísceras crudas. La frecuencia exacta depende de cada perro y de dónde vive, así que consúltala con tu veterinario.
+
+Cuéntanos en los comentarios: ¿tú ya lo sabías?
+
+#ColmilloBlanco #DéjalosATodosContentos #SabiasQue #TenenciaResponsable
+
+Fuente editorial: Ministerio de Salud de Chile, información para la comunidad sobre hidatidosis (diprece.minsal.cl/hidatidosis).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 22/11 -->
+    <div class="pieza">
+      <div class="pieza-head">
+        <div class="ph-date"><span class="num">22</span><span class="mes">Nov</span></div>
+        <div class="ph-accent ac-post"></div>
+        <div class="ph-info">
+          <h3>Mito o realidad: si tu perro come pasto, es porque está enfermo.</h3>
+          <div class="ph-badges">
+            <span class="badge b-post">Post</span>
+            <span class="badge b-pilar">Nutrición y producto</span>
+            <span class="badge b-pilar">Domingo</span>
+          </div>
+        </div>
+        <div class="ph-time"><span>13:00 – 21:00</span></div>
+      </div>
+      <div class="pieza-body">
+        <div class="pcol">
+          <div class="pcol-label">Visual</div>
+          <div class="post-img-wrap"><img src="assets/img/28.png" alt="22 de noviembre" loading="lazy"></div>
+        </div>
+        <div class="pcol">
+          <div class="pcol-label">Caption</div>
+          <div class="copy-block cc">Mito o realidad: si tu perro come pasto, es porque está enfermo. 🌿
+
+Mito. En una encuesta a dueños de 1.571 perros, realizada por investigadores de la Universidad de California, Davis, 68% comía plantas a diario o una vez por semana, y solo 9% parecía enfermo antes de hacerlo. Los autores concluyen que comer pasto es una conducta normal en los perros.
+
+Cuándo consultar al veterinario: si lo hace de forma obsesiva, vomita seguido, tiene diarrea o baja de peso.
+
+Ojo con el pasto recién fumigado o tratado con herbicidas: evita que lo coma.
+
+Cuéntanos en los comentarios: ¿tu perro también es de los que pastan?
+
+#ColmilloBlanco #DéjalosATodosContentos #MitoORealidad #CuidadoCanino
+
+Fuente editorial: Sueda, Hart y Cliff, "Characterisation of plant eating in dogs", Applied Animal Behaviour Science (2008).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week-sep"><span>Semana 2 · 23 – 29 nov · 2 posts + 1 reel + 1 carrusel</span></div>
+
+    <!-- 23/11 -->
+    <div class="pieza">
+      <div class="pieza-head">
+        <div class="ph-date"><span class="num">23</span><span class="mes">Nov</span></div>
+        <div class="ph-accent ac-post"></div>
+        <div class="ph-info">
+          <h3>Petshops: súmate a Colmillo Blanco.</h3>
+          <div class="ph-badges">
+            <span class="badge b-post">Post</span>
+            <span class="badge b-pilar">Distribución</span>
+            <span class="badge b-pilar">Lunes</span>
+          </div>
+        </div>
+        <div class="ph-time"><span>13:00 – 21:00</span></div>
+      </div>
+      <div class="pieza-body">
+        <div class="pcol">
+          <div class="pcol-label">Visual</div>
+          <div class="post-img-wrap"><img src="assets/img/29.png" alt="23 de noviembre" loading="lazy"></div>
+        </div>
+        <div class="pcol">
+          <div class="pcol-label">Caption</div>
+          <div class="copy-block cc">Petshops: si tienes una tienda y quieres ofrecer una marca chilena en crecimiento, súmate a Colmillo Blanco.
+
+Deja tus datos en nuestro formulario y un ejecutivo se contactará contigo lo antes posible. Además, contarás con material de marketing para apoyar la venta en tu tienda.
+
+Súmate en 👉 colmilloblanco.cl/quiero-vender
+
+#ColmilloBlanco #DéjalosATodosContentos #Petshop #PerrosDeChile</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 25/11 -->
+    <div class="pieza">
+      <div class="pieza-head">
+        <div class="ph-date"><span class="num">25</span><span class="mes">Nov</span></div>
+        <div class="ph-accent ac-reel"></div>
+        <div class="ph-info">
+          <h3>Kike: esto es lo que sale de cada plato de Colmillo Blanco.</h3>
+          <div class="ph-badges">
+            <span class="badge b-reel">Reel</span>
+            <span class="badge b-pilar">Nutrición y producto</span>
+            <span class="badge b-pilar">Miércoles</span>
+          </div>
+        </div>
+        <div class="ph-time"><span>18:00 – 21:00</span></div>
+      </div>
+      <div class="pieza-body">
+        <div class="pcol">
+          <div class="pcol-label">Reel</div>
+          <div class="reel-video-wrap"><video src="assets/video/kike_plato.mp4" poster="assets/img/poster_kike_plato.jpg" controls playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;"></video></div>
+        </div>
+        <div class="pcol">
+          <div class="pcol-label">Caption</div>
+          <div class="copy-block cc">Kike: esto es lo que sale de cada plato de Colmillo Blanco. 🍽️
+
+Más energía, pelaje brillante, articulaciones fuertes y digestión sana, con un alimento alto en proteínas, en base a carne deshidratada de vacuno, formulado para todos los perros.
+
+Más información en 👉 www.colmilloblanco.cl
+
+#ColmilloBlanco #DéjalosATodosContentos #AltaProteína #PerrosDeChile</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 27/11 -->
+    <div class="pieza">
+      <div class="pieza-head">
+        <div class="ph-date"><span class="num">27</span><span class="mes">Nov</span></div>
+        <div class="ph-accent ac-carrusel"></div>
+        <div class="ph-info">
+          <h3>Chip y esterilización: pregunta en tu municipio, pueden ser gratis.</h3>
+          <div class="ph-badges">
+            <span class="badge b-carrusel">Carrusel</span>
+            <span class="badge b-pilar">Tenencia responsable</span>
+            <span class="badge b-pilar">Viernes</span>
+          </div>
+        </div>
+        <div class="ph-time"><span>13:00 – 18:30</span></div>
+      </div>
+      <div class="pieza-body">
+        <div class="pcol">
+          <div class="pcol-label">Carrusel — 3 slides</div>
+          <div class="car-wrap"><div class="car-track">
+    <div class="car-slide"><img src="assets/img/30.png" alt="Slide 1" loading="lazy"></div>
+    <div class="car-slide"><img src="assets/img/31.png" alt="Slide 2" loading="lazy"></div>
+    <div class="car-slide"><img src="assets/img/32.png" alt="Slide 3" loading="lazy"></div>
+  </div><div class="car-indicators"><span class="car-dot"></span><span class="car-dot"></span><span class="car-dot"></span></div></div>
+        </div>
+        <div class="pcol">
+          <div class="pcol-label">Caption</div>
+          <div class="copy-block cc">Chip y esterilización: pregunta en tu municipio, pueden ser gratis. 🐾
+
+El chip se implanta bajo la piel y tiene un número único de 15 dígitos, que permite identificar a tu perro si se pierde. Inscribirlo en el Registro Nacional de Mascotas es obligatorio desde los 2 meses de edad y no tiene costo.
+
+Además, SUBDERE financia operativos municipales que combinan esterilización y chip. No todas las comunas los tienen al mismo tiempo, así que lo mejor es preguntar en tu municipio.
+
+Cuéntanos en los comentarios: ¿tú ya lo sabías?
+
+#ColmilloBlanco #DéjalosATodosContentos #SabiasQue #TenenciaResponsable
+
+Fuente editorial: Chileatiende, inscripción en el Registro Nacional de Mascotas; SUBDERE, programa Mascota Protegida.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 29/11 -->
+    <div class="pieza">
+      <div class="pieza-head">
+        <div class="ph-date"><span class="num">29</span><span class="mes">Nov</span></div>
+        <div class="ph-accent ac-post"></div>
+        <div class="ph-info">
+          <h3>Patas: lo que hacen las almohadillas de tu perro y cómo cuidarlas.</h3>
+          <div class="ph-badges">
+            <span class="badge b-post">Post</span>
+            <span class="badge b-pilar">Educación canina</span>
+            <span class="badge b-pilar">Domingo</span>
+          </div>
+        </div>
+        <div class="ph-time"><span>13:00 – 21:00</span></div>
+      </div>
+      <div class="pieza-body">
+        <div class="pcol">
+          <div class="pcol-label">Visual</div>
+          <div class="post-img-wrap"><img src="assets/img/33.png" alt="29 de noviembre" loading="lazy"></div>
+        </div>
+        <div class="pcol">
+          <div class="pcol-label">Caption</div>
+          <div class="copy-block cc">Patas: lo que hacen las almohadillas de tu perro y cómo cuidarlas. 🐾
+
+Las almohadillas amortiguan el impacto de cada paso y dan agarre al caminar y correr. Pero también están en contacto directo con todo lo que pisa.
+
+Calor: bajo el sol, el pavimento puede superar los 50 °C. Apoya el dorso de tu mano en el suelo 5 a 7 segundos: si a ti te molesta, a tu perro también. Pasea en las primeras horas de la mañana o al final del día.
+
+Revisión: después de pasear, mira las almohadillas y entre los dedos. Cojera, enrojecimiento, ampollas, grietas profundas o algo clavado son motivo para ir al veterinario.
+
+Cuidado: límpialas con un paño húmedo y sécalas bien entre los dedos.
+
+Cuéntanos en los comentarios: ¿cuándo fue la última vez que revisaste las patas de tu perro?
+
+#ColmilloBlanco #DéjalosATodosContentos #CuidadoCanino #PatasSanas
+
+Fuente editorial: Vetstreet, "Dog Paw Pads"; Consumer, "Cómo proteger las almohadillas del perro"; Colmevet; Pauta (septiembre 2026); El Español (junio 2026).</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <span class="sec-label">Resumen de quincena</span>
+    <div class="sec-rule"></div>
+  </div>
+
+  <div class="resumen-nums">
+    <div class="rn-card gold">
+      <div class="rnum">8</div>
+      <div class="rlabel">Piezas totales</div>
+    </div>
+    <div class="rn-card">
+      <div class="rnum">4</div>
+      <div class="rlabel">Posts</div>
+    </div>
+    <div class="rn-card">
+      <div class="rnum">2</div>
+      <div class="rlabel">Reels</div>
+    </div>
+    <div class="rn-card">
+      <div class="rnum">2</div>
+      <div class="rlabel">Carruseles</div>
+    </div>
+  </div>
+
+  <div class="resumen-detail">
+    <div class="rd-label">Pilares cubiertos</div>
+    <div class="pilares">
+      <span class="ptag">Educación canina (2)</span>
+      <span class="ptag">Tenencia responsable (2)</span>
+      <span class="ptag">Distribución (2)</span>
+      <span class="ptag">Nutrición y producto (2)</span>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo-text">Agencia ERRE</div>
+    <div class="footer-slogan">"Déjalos a todos contentos"</div>
+    <div class="footer-meta">Segunda quincena · Noviembre 2026 · 17 – 29 nov</div>
+  </div>
+</footer>
+
+</body>
+</html>
